@@ -1,3 +1,2 @@
-Getting-to-know-ML
-
+# Getting-to-know-ML
 To understand the basic ML techniques
