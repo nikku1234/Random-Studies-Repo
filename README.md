@@ -42,7 +42,7 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 [Tensorflow-Codes from Different Textbooks](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow-from%20textbooks)
 
-  * [Deep-Learning-with-TensorFlow](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow-from%20textbooks/Deep-Learning-with-TensorFlow/chapter%202)
-  * [Getting-Started-with-TensorFlow](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow-from%20textbooks/Getting-Started-with-TensorFlow/Chapter%201)
+  * [Deep-Learning-with-TensorFlow](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow-from%20textbooks/Deep-Learning-with-TensorFlow)
+  * [Getting-Started-with-TensorFlow](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow-from%20textbooks/Getting-Started-with-TensorFlow)
 
 [Understanding Tensorflow_Google Colab Notes](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Understanding%20Tensorflow_google)
