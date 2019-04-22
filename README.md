@@ -29,4 +29,8 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 [Comparison of segmentation and superpixel algorithms](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Mammogram%20/Comparison%20of%20segmentation%20and%20superpixel%20algorithms.ipynb)
 
+[Image Enhance using Sci-Kit Image](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Mammogram%20/Sci-Kit%20Image%20Processing%20Techniques.ipynb)
+
 [Image Enhance using PIL](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Mammogram%20/Image%20Enhance%20in%20PIL.ipynb)
+
+[Morphological Operations in OpenCV](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Mammogram%20/morphological%20operations%20in%20opencv.ipynb)
