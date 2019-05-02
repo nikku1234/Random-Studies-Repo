@@ -87,7 +87,7 @@ class outconv(nn.Module):
 
 
 
-class Unet (nn.Module):
+class UNet (nn.Module):
     def __init__(self, n_channels, n_classes):
         super(UNet, self).__init__()
 
