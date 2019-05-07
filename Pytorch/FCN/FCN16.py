@@ -18,11 +18,9 @@ def get_upsampling_weight(in_channels,out_channels,kernel_size):
     return torch.from_numpy(weight).float()
 
 
-
-class FCN32(nn.Module):
-
-    def __init__(self, n_class= 2):#VALUE
-        super(FCN32,self).__init__()
+class FCN16s(nn.Module):
+    def __init__(self,n_class=2):
+        super (FCN16s,self).__init__()
 
         #convolution 1
 
@@ -71,7 +69,6 @@ class FCN32(nn.Module):
         self.conv5_3 = nn.Conv2d(in_channels=512,out_channels=512,kernel_size=3,padding=1)
         self.pool5 = nn.MaxPool2d(kernel_size=2,stride=2,ceil_mode=True)                # 1/32
 
-
         #fc 6
         self.fc6 = nn.Conv2d(in_channels=512,out_channels=4096,kernel_size=7)
         self.relu6 = nn.ReLU(inplace=True)
@@ -84,28 +81,30 @@ class FCN32(nn.Module):
 
 
 
-        self.score_fn = nn.Conv2d(in_channels=4096,out_channels=n_class,kernel_size=1)
-        self.upscore = nn.ConvTranspose2d(n_class,n_class,64,stride=32,bias=False)
+        self.score_fr = nn.Conv2d(in_channels=4096,out_channels=n_class,kernel_size=1)
+        self.score_pool4 = nn.Conv2d(in_channels=512, out_channels=n_class, kernel_size=1)
+        
+        self.upscore2 = nn.ConvTranspose2d(
+            n_class, n_class, 4, stride=2, bias=False)
+
+        
+        self.upscore16 = nn.ConvTranspose2d(
+            n_class, n_class, 32, stride=16, bias=False)
+
 
         self._initialize_weights()
 
-
-
-#FIGURING OUT
-    def _initialize_weights(self):
-        for m in self.modules():
-            if isinstance(m, nn.Conv2d):
-                m.weight.data.zero_()
-                if m.bias is not None:
-                    m.bias.data.zero_()
-            if isinstance(m, nn.ConvTranspose2d):
-                assert m.kernel_size[0] == m.kernel_size[1]
-                initial_weight = get_upsampling_weight(
-                    m.in_channels, m.out_channels, m.kernel_size[0])
-                m.weight.data.copy_(initial_weight)
-    
-
-
+        def _initialize_weights(self):
+            for m in self.modules():
+                if isinstance(m, nn.Conv2d):
+                    m.weight.data.zero_()
+                    if m.bias is not None:
+                        m.bias.data.zero_()
+                if isinstance(m, nn.ConvTranspose2d):
+                    assert m.kernel_size[0] == m.kernel_size[1]
+                    initial_weight = get_upsampling_weight(
+                        m.in_channels, m.out_channels, m.kernel_size[0])
+                    m.weight.data.copy_(initial_weight)
     def forward(self, x):
         h = x
         h = self.relu1_1(self.conv1_1(h))
@@ -125,6 +124,7 @@ class FCN32(nn.Module):
         h = self.relu4_2(self.conv4_2(h))
         h = self.relu4_3(self.conv4_3(h))
         h = self.pool4(h)
+        pool4 = h  # 1/16
 
         h = self.relu5_1(self.conv5_1(h))
         h = self.relu5_2(self.conv5_2(h))
@@ -138,43 +138,30 @@ class FCN32(nn.Module):
         h = self.drop7(h)
 
         h = self.score_fr(h)
+        h = self.upscore2(h)
+        upscore2 = h  # 1/16
 
-        h = self.upscore(h)
-        h = h[:, :, 19:19 + x.size()[2], 19:19 + x.size()[3]].contiguous()
+        h = self.score_pool4(pool4)
+        h = h[:, :, 5:5 + upscore2.size()[2], 5:5 + upscore2.size()[3]]
+        score_pool4c = h  # 1/16
+
+        h = upscore2 + score_pool4c
+
+        h = self.upscore16(h)
+        h = h[:, :, 27:27 + x.size()[2], 27:27 + x.size()[3]].contiguous()
 
         return h
 
+    def copy_params_from_fcn32s(self, fcn32s):
+        for name, l1 in fcn32s.named_children():
+            try:
+                l2 = getattr(self, name)
+                l2.weight  # skip ReLU / Dropout
+            except Exception:
+                continue
+            assert l1.weight.size() == l2.weight.size()
+            assert l1.bias.size() == l2.bias.size()
+            l2.weight.data.copy_(l1.weight.data)
+            l2.bias.data.copy_(l1.bias.data)
 
 
-    def copy_params_from_vgg16(self, vgg16):
-        features = [
-            self.conv1_1, self.relu1_1,
-            self.conv1_2, self.relu1_2,
-            self.pool1,
-            self.conv2_1, self.relu2_1,
-            self.conv2_2, self.relu2_2,
-            self.pool2,
-            self.conv3_1, self.relu3_1,
-            self.conv3_2, self.relu3_2,
-            self.conv3_3, self.relu3_3,
-            self.pool3,
-            self.conv4_1, self.relu4_1,
-            self.conv4_2, self.relu4_2,
-            self.conv4_3, self.relu4_3,
-            self.pool4,
-            self.conv5_1, self.relu5_1,
-            self.conv5_2, self.relu5_2,
-            self.conv5_3, self.relu5_3,
-            self.pool5,
-        ]
-        for l1, l2 in zip(vgg16.features, features):
-            if isinstance(l1, nn.Conv2d) and isinstance(l2, nn.Conv2d):
-                assert l1.weight.size() == l2.weight.size()
-                assert l1.bias.size() == l2.bias.size()
-                l2.weight.data = l1.weight.data
-                l2.bias.data = l1.bias.data
-        for i, name in zip([0, 3], ['fc6', 'fc7']):
-            l1 = vgg16.classifier[i]
-            l2 = getattr(self, name)
-            l2.weight.data = l1.weight.data.view(l2.weight.size())
-            l2.bias.data = l1.bias.data.view(l2.bias.size())
