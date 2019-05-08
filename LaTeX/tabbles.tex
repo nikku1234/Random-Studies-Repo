@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\title{My First Document}
+\author{Nikhil Ramesh}
+\date{\today}
+\maketitle
+
+
+
+% This code starts a table:  \begin{tabular}{...}    Where the dots between the curly brackets are replaced by code defining thecolumns: l for a column of left-aligned text (letter el,notnumber one). r for a column of right-aligned text., c for a column of centre-aligned text.
+ %     |for a vertical line.For example,{lll}(i.e.  left left left) will produce 3 columns of left-alignedtext with no vertical lines , while{|l|l|r|}(i.e.|left|left|right|) will produce 3 columns — the first 2 are left-aligned, the third is right-aligned, and there are vertical lines around each column.The table data follows the \begin command:
+ %     & is placed between columns.
+ %     \\is placed at the end of a row (to start a new one)
+%     \hlineinserts a horizontal line.  
+%     \cline{1-2}inserts  a  partial  horizontal  line  between  column  1  andcolumn 2.
+%The command\end{tabular}finishes the table.
+
+
+\begin{tabular}{|l|l|}
+Apples & Green 
+\\Strawberries & Red 
+\\Oranges & Orange 
+\\\end{tabular}
+
+\newpage
+
+\begin{tabular}{rc}
+Apples & Green \\
+\hline
+Strawberries & Red \\
+\cline{1-1}
+Oranges & Orange \\
+\end{tabular}
+
+\newpage
+
+\begin{tabular}{|r|l|}
+\hline
+8 & here’s \\
+\cline{2-2}
+86 & stuff \\
+\hline \hline
+2008 & now \\
+\hline
+\end{tabular}
+
+
+\newpage
+
+
+
+
+
+\end{document}
