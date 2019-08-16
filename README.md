@@ -62,5 +62,10 @@ These repo contains all the notebooks and files, which I am working on and also 
  
  [Lecture 7](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/lecture7.pdf)
  
+## Getting to know Deep Learning
+
+[This will be a series of the code, which will help beginners in Deep Learning to understand the coding in it.]
+(https://github.com/nikku1234/Random-Studies-Repo/tree/master/Deep%20Learning%20and%20Machine%20Learning/Getting-to-know-Deep-Learning)
+
 ## Korbit Free Machine Learning Bot Lessons
 [Korbit](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
