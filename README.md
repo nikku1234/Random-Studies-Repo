@@ -46,3 +46,7 @@ These repo contains all the notebooks and files, which I am working on and also 
   * [Getting-Started-with-TensorFlow](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow-from%20textbooks/Getting-Started-with-TensorFlow)
 
 [Understanding Tensorflow_Google Colab Notes](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Understanding%20Tensorflow_google)
+
+
+## Korbit Free Machine Learning Bot Lessons
+[Korbi](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
