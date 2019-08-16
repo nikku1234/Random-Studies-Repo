@@ -54,13 +54,13 @@ These repo contains all the notebooks and files, which I am working on and also 
  
  [Lecture 3](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/lecture%203.pdf)
  
- [Lecture 4]
+ [Lecture 4](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/lecture%204.pdf)
  
- [Lecture 5]
+ [Lecture 5](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/lecture%205.pdf)
  
- [Lecture 6]
+ [Lecture 6](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/lecture%206.pdf)
  
- [Lecture 7] 
+ [Lecture 7](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/lecture7.pdf)
  
 ## Korbit Free Machine Learning Bot Lessons
 [Korbit](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
