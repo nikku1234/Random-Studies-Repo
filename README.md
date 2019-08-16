@@ -49,4 +49,4 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 
 ## Korbit Free Machine Learning Bot Lessons
-[Korbi](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
+[Korbit](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
