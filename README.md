@@ -47,8 +47,7 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 [Understanding Tensorflow_Google Colab Notes](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Understanding%20Tensorflow_google)
 
-## Deep Learning(CS7015) [Youtube Link](https://youtu.be/4TC5s_xNKSs)
- * Notes
+## Deep Learning(CS7015) [Youtube Link](https://youtu.be/4TC5s_xNKSs) Notes
  [Lecture 1](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/Lecture%201.pdf)
  
  
