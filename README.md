@@ -49,6 +49,6 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 ## Deep Learning(CS7015) [Youtube Link](https://youtu.be/4TC5s_xNKSs)
  * Notes
- [Lecture 1] (https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/Lecture%201.pdf)
+ [Lecture 1](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Deep%20Learning(CS7015)/Lecture%201.pdf)
 ## Korbit Free Machine Learning Bot Lessons
 [Korbit](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
