@@ -68,3 +68,6 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 ## Korbit Free Machine Learning Bot Lessons
 [Korbit](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Korbit)
+
+## Docker Commands
+[Docker Files](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Docker)
