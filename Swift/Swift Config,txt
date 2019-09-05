@@ -1,0 +1,55 @@
+
+Minimal subset of the full gist
+cd
+mkdir download
+cd download
+wget https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
+chmod u+x cuda_10.0.130_410.48_linux
+./cuda_10.0.130_410.48_linux --extract=`pwd`
+sudo ./cuda-linux.10.0.130-24817639.run -noprompt
+echo /usr/local/cuda-10.0/lib64 | sudo tee -a /etc/ld.so.conf 
+sudo ldconfig
+echo 'export PATH=/usr/local/cuda-10.0/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+cd ~/download
+wget http://files.fast.ai/files/cudnn-10.0-linux-x64-v7.5.0.56.tgz
+tar xf cudnn-10.0-linux-x64-v7.5.0.56.tgz
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+sudo ldconfig
+
+Now we can setup s4tf:
+cd ~/download/
+wget https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.3/rc1/swift-tensorflow-RELEASE-0.3-cuda10.0-cudnn7-ubuntu18.04.tar.gz
+# apt-fast is recommended because it's fast. Can you just `apt` if you prefer
+sudo apt-fast -y install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
+tar xf swift-tensorflow-RELEASE-0.3-cuda10.0-cudnn7-ubuntu18.04.tar.gz
+cd
+mkdir swift
+cd swift
+mv ~/download/usr ./
+cd
+echo 'export PATH=~/swift/usr/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+mkdir -p git
+cd ~/git
+git clone https://github.com/google/swift-jupyter.git
+cd swift-jupyter
+python register.py --sys-prefix --swift-python-use-conda --use-conda-shared-libs   --swift-toolchain ~/swift
+cd ~/git
+git clone https://github.com/fastai/fastai_docs.git
+cd fastai_docs/
+jupyter notebook
+
+Updating
+wget https://storage.googleapis.com/swift-tensorflow-artifacts/releases/latest/swift-tensorflow-RELEASE-LATEST-cuda10.0-cudnn7-ubuntu18.04.tar.gz
+tar xf swift-tensorflow-RELEASE-LATEST-cuda10.0-cudnn7-ubuntu18.04.tar.gz
+cd ~/swift/
+rm -rf usr
+mv ~/download/usr ./
+cd ~/git/swift-jupyter
+git pull
+python register.py --sys-prefix --swift-python-use-conda --use-conda-shared-libs   --swift-toolchain ~/swift
