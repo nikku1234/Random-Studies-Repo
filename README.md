@@ -35,6 +35,17 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 [Morphological Operations in OpenCV](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Mammogram%20/morphological%20operations%20in%20opencv.ipynb)
 
+## Certifications
+
+[Neural Networks and Deep Learning](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/Course%201/Neural.pdf)
+[Structuring Machine Learning Projects](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/Course%202/certificate.pdf)
+[Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/Course%203/ht_www.coursera.org_api_certificate.pdf)
+[Convolutional Neural Networks](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/Course%204/https___www.coursera.org_api_certificate.pdf)
+[Fundamentals of Deep Learning for Computer Vision](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/Nvidia/DLI%20C-FX-01%20Certificate%20%7C%20Deep%20Learning%20Institute.pdf)
+[Data Science Orientation](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/IBM%20/Course%201/certificate.pdf)
+
+
+
 ## Tensorflow
 [Tensorflow from scratch](https://github.com/nikku1234/Random-Studies-Repo/tree/master/Tensorflow%20/Tensorflow%20from%20scratch%20)
 
