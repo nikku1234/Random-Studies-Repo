@@ -45,9 +45,9 @@ These repo contains all the notebooks and files, which I am working on and also 
 
 [Convolutional Neural Networks](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/Course%204/https___www.coursera.org_api_certificate.pdf)
 
-[Sequence Models]()
+[Sequence Models](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/Course%205/https___www.coursera.org_api_certificate.pdf)
 
-[Deep Learning Specialization]()
+[Deep Learning Specialization](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/DeepLearning.Ai/final.pdf)
 
 [Fundamentals of Deep Learning for Computer Vision](https://github.com/nikku1234/Random-Studies-Repo/blob/master/Certification/Nvidia/DLI%20C-FX-01%20Certificate%20%7C%20Deep%20Learning%20Institute.pdf)
 
